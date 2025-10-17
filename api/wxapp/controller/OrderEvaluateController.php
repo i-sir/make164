@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-08-31 16:42:33",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\OrderEvaluateController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/order_evaluate/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/order_evaluate/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/order_evaluate/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/order_evaluate/index",
  * )
  */
 
@@ -43,7 +43,7 @@ class OrderEvaluateController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/order_evaluate/index
-     * https://ljh.wxselling.net/api/wxapp/order_evaluate/index
+     * https://dzam164.wxselling.net/api/wxapp/order_evaluate/index
      */
     public function index()
     {
@@ -106,8 +106,8 @@ class OrderEvaluateController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/order_evaluate/find_evaluate_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/order_evaluate/find_evaluate_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/order_evaluate/find_evaluate_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/order_evaluate/find_evaluate_list
      *   api:  /wxapp/order_evaluate/find_evaluate_list
      *   remark_name: 评价管理 列表
      *
@@ -200,8 +200,8 @@ class OrderEvaluateController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/order_evaluate/add_evaluate
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/order_evaluate/add_evaluate
+     *   test_environment: http://make164.ikun:9090/api/wxapp/order_evaluate/add_evaluate
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/order_evaluate/add_evaluate
      *   api:  /wxapp/order_evaluate/add_evaluate
      *   remark_name: 评价管理 添加
      *

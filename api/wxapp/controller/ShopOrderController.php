@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-08-30 16:18:12",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\ShopOrderController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/shop_order/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/shop_order/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/shop_order/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/shop_order/index",
  * )
  */
 
@@ -45,7 +45,7 @@ class ShopOrderController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/shop_order/index
-     * https://ljh.wxselling.net/api/wxapp/shop_order/index
+     * https://dzam164.wxselling.net/api/wxapp/shop_order/index
      */
     public function index()
     {
@@ -108,8 +108,8 @@ class ShopOrderController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/find_order_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/find_order_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/find_order_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/find_order_list
      *   api:  /wxapp/shop_order/find_order_list
      *   remark_name: 订单管理 列表
      *
@@ -190,8 +190,8 @@ class ShopOrderController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/find_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/find_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/find_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/find_order
      *   api:  /wxapp/shop_order/find_order
      *   remark_name: 订单管理 详情
      *
@@ -340,8 +340,8 @@ class ShopOrderController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/get_amount
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/get_amount
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/get_amount
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/get_amount
      *   api:  /wxapp/shop_order/get_amount
      *   remark_name: 计算价格
      *
@@ -580,8 +580,8 @@ class ShopOrderController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/add_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/add_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/add_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/add_order
      *   api:  /wxapp/shop_order/add_order
      *   remark_name: 订单管理 编辑&添加
      *
@@ -854,8 +854,8 @@ class ShopOrderController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/add_clock
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/add_clock
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/add_clock
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/add_clock
      *   api:  /wxapp/shop_order/add_clock
      *   remark_name: 加钟订单
      *
@@ -1110,8 +1110,8 @@ class ShopOrderController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/cancel_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/cancel_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/cancel_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/cancel_order
      *   api:  /wxapp/shop_order/cancel_order
      *   remark_name: 取消订单
      *
@@ -1267,8 +1267,8 @@ class ShopOrderController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/delete_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/delete_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/delete_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/delete_order
      *   api:  /wxapp/shop_order/delete_order
      *   remark_name: 删除订单
      *
@@ -1341,8 +1341,8 @@ class ShopOrderController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order/accomplish_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order/accomplish_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order/accomplish_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order/accomplish_order
      *   api:  /wxapp/shop_order/accomplish_order
      *   remark_name: 服务结束
      *

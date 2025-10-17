@@ -112,8 +112,8 @@ class SendTempMsgController extends AuthController
      * @throws \think\db\exception\DbException
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/send_temp_msg/find_official
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/send_temp_msg/find_official
+     *   test_environment: http://make164.ikun:9090/api/wxapp/send_temp_msg/find_official
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/send_temp_msg/find_official
      *   api: /wxapp/send_temp_msg/find_official
      *
      * 相关文档:https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html
@@ -266,8 +266,8 @@ class SendTempMsgController extends AuthController
      * 可带参数
      * 用户扫码后,进入公众号会携带参数以及ticket
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/send_temp_msg/qrcode_create
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/send_temp_msg/qrcode_create
+     *   test_environment: http://make164.ikun:9090/api/wxapp/send_temp_msg/qrcode_create
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/send_temp_msg/qrcode_create
      *   api: /wxapp/send_temp_msg/qrcode_create
      *
      * 相关文档:
@@ -310,8 +310,8 @@ class SendTempMsgController extends AuthController
      * @param string  $color       主题字体颜色
      * @return  string
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/send_temp_msg/sendTempMsg
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/send_temp_msg/sendTempMsg
+     *   test_environment: http://make164.ikun:9090/api/wxapp/send_temp_msg/sendTempMsg
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/send_temp_msg/sendTempMsg
      *   api: /wxapp/send_temp_msg/sendTempMsg
      *
      */
@@ -379,8 +379,8 @@ class SendTempMsgController extends AuthController
      * @param string $color
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/send_temp_msg/send_temp_msg_test
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/send_temp_msg/send_temp_msg_test
+     *   test_environment: http://make164.ikun:9090/api/wxapp/send_temp_msg/send_temp_msg_test
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/send_temp_msg/send_temp_msg_test
      *   api: /wxapp/send_temp_msg/send_temp_msg_test
      *
      */
@@ -427,8 +427,8 @@ class SendTempMsgController extends AuthController
     /**
      * 增加菜单   用浏览器直接访问下 然后就可以直接更新了
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/send_temp_msg/addWeixinMenu
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/send_temp_msg/addWeixinMenu
+     *   test_environment: http://make164.ikun:9090/api/wxapp/send_temp_msg/addWeixinMenu
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/send_temp_msg/addWeixinMenu
      *   api: /wxapp/send_temp_msg/addWeixinMenu
      *
      */
@@ -479,8 +479,8 @@ class SendTempMsgController extends AuthController
      * @throws \WeChat\Exceptions\InvalidResponseException
      * @throws \WeChat\Exceptions\LocalCacheException
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/send_temp_msg/batch_get_material
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/send_temp_msg/batch_get_material
+     *   test_environment: http://make164.ikun:9090/api/wxapp/send_temp_msg/batch_get_material
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/send_temp_msg/batch_get_material
      *   api: /wxapp/send_temp_msg/batch_get_material
      *
      */
@@ -526,8 +526,8 @@ class SendTempMsgController extends AuthController
      * 该接口调用频率限制为 1万次 每分钟，每天限制调用 50w 次；
      * 与获取Access token获取的调用凭证完全隔离，互不影响。该接口仅支持 POST JSON 形式的调用；
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/send_temp_msg/get_stable_access_token
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/send_temp_msg/get_stable_access_token
+     *   test_environment: http://make164.ikun:9090/api/wxapp/send_temp_msg/get_stable_access_token
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/send_temp_msg/get_stable_access_token
      *   api: /wxapp/send_temp_msg/get_stable_access_token
      *
      *  只针对公众号

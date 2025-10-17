@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-08-30 15:12:32",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\TechnicianController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/technician/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/technician/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/technician/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/technician/index",
  * )
  */
 
@@ -47,7 +47,7 @@ class TechnicianController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/technician/index
-     * https://ljh.wxselling.net/api/wxapp/technician/index
+     * https://dzam164.wxselling.net/api/wxapp/technician/index
      */
     public function index()
     {
@@ -163,8 +163,8 @@ class TechnicianController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/find_technician_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/find_technician_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/find_technician_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/find_technician_list
      *   api:  /wxapp/technician/find_technician_list
      *   remark_name: 技师管理 列表
      *
@@ -286,8 +286,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/find_technician
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/find_technician
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/find_technician
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/find_technician
      *   api:  /wxapp/technician/find_technician
      *   remark_name: 技师管理 详情
      *
@@ -676,8 +676,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/edit_technician
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/edit_technician
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/edit_technician
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/edit_technician
      *   api:  /wxapp/technician/edit_technician
      *   remark_name: 技师管理 编辑&添加
      *
@@ -883,8 +883,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/settled_technician
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/settled_technician
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/settled_technician
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/settled_technician
      *   api:  /wxapp/technician/settled_technician
      *   remark_name: 技师入驻
      *
@@ -1031,8 +1031,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/delete_technician
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/delete_technician
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/delete_technician
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/delete_technician
      *   api:  /wxapp/technician/delete_technician
      *   remark_name: 技师管理 删除
      *
@@ -1092,8 +1092,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/pass_login
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/pass_login
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/pass_login
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/pass_login
      *   api:  /wxapp/technician/pass_login
      *   remark_name: 手机密码登录
      *
@@ -1196,8 +1196,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/update_pass
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/update_pass
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/update_pass
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/update_pass
      *   api: /wxapp/technician/update_pass
      *   remark_name: 修改密码
      *
@@ -1292,8 +1292,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/receive_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/receive_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/receive_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/receive_order
      *   api:  /wxapp/technician/receive_order
      *   remark_name: 接单
      *
@@ -1382,8 +1382,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/depart_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/depart_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/depart_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/depart_order
      *   api:  /wxapp/technician/depart_order
      *   remark_name: 出发
      *
@@ -1472,8 +1472,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/reach_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/reach_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/reach_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/reach_order
      *   api:  /wxapp/technician/reach_order
      *   remark_name: 到达
      *
@@ -1582,8 +1582,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/start_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/start_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/start_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/start_order
      *   api:  /wxapp/technician/start_order
      *   remark_name: 开始服务
      *
@@ -1672,8 +1672,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/done_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/done_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/done_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/done_order
      *   api:  /wxapp/technician/done_order
      *   remark_name: 结束服务
      *
@@ -1815,8 +1815,8 @@ class TechnicianController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/technician/cancel_order
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/technician/cancel_order
+     *   test_environment: http://make164.ikun:9090/api/wxapp/technician/cancel_order
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/technician/cancel_order
      *   api:  /wxapp/technician/cancel_order
      *   remark_name: 取消订单(后台审核)
      *

@@ -28,8 +28,8 @@ class TaskController
     /**
      * 执行定时任务
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/task/index
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/task/index
+     *   test_environment: http://make164.ikun:9090/api/wxapp/task/index
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/task/index
      *   api: /wxapp/task/index
      *   remark_name: 执行定时任务
      *
@@ -57,8 +57,8 @@ class TaskController
     /**
      * 执行定时任务 (每个月发放佣金)  此项目不需要
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/task/send_order_commission
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/task/send_order_commission
+     *   test_environment: http://make164.ikun:9090/api/wxapp/task/send_order_commission
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/task/send_order_commission
      *   api: /wxapp/task/send_order_commission
      *   remark_name: 给技师增加佣金
      *

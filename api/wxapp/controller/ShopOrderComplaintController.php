@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-12-06 16:55:39",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\ShopOrderComplaintController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/shop_order_complaint/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/shop_order_complaint/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/shop_order_complaint/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/shop_order_complaint/index",
  * )
  */
 
@@ -43,7 +43,7 @@ class ShopOrderComplaintController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/shop_order_complaint/index
-     * https://ljh.wxselling.net/api/wxapp/shop_order_complaint/index
+     * https://dzam164.wxselling.net/api/wxapp/shop_order_complaint/index
      */
     public function index()
     {
@@ -80,8 +80,8 @@ class ShopOrderComplaintController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order_complaint/find_complaint
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order_complaint/find_complaint
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order_complaint/find_complaint
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order_complaint/find_complaint
      *   api:  /wxapp/shop_order_complaint/find_complaint
      *   remark_name: 订单投诉 详情
      *
@@ -172,8 +172,8 @@ class ShopOrderComplaintController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order_complaint/add_complaint
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order_complaint/add_complaint
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order_complaint/add_complaint
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order_complaint/add_complaint
      *   api:  /wxapp/shop_order_complaint/add_complaint
      *   remark_name: 订单投诉  添加
      *

@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-12-06 16:02:05",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\ShopOrderAddressController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/shop_order_address/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/shop_order_address/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/shop_order_address/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/shop_order_address/index",
  * )
  */
 
@@ -43,7 +43,7 @@ class ShopOrderAddressController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/shop_order_address/index
-     * https://ljh.wxselling.net/api/wxapp/shop_order_address/index
+     * https://dzam164.wxselling.net/api/wxapp/shop_order_address/index
      */
     public function index()
     {
@@ -131,8 +131,8 @@ class ShopOrderAddressController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_order_address/add_address
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_order_address/add_address
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_order_address/add_address
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_order_address/add_address
      *   api:  /wxapp/shop_order_address/add_address
      *   remark_name: 技师定位(技师身份请求) 添加
      *

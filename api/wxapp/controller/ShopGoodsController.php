@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-08-30 10:44:19",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\ShopGoodsController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/shop_goods/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/shop_goods/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/shop_goods/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/shop_goods/index",
  * )
  */
 
@@ -43,7 +43,7 @@ class ShopGoodsController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/shop_goods/index
-     * https://ljh.wxselling.net/api/wxapp/shop_goods/index
+     * https://dzam164.wxselling.net/api/wxapp/shop_goods/index
      */
     public function index()
     {
@@ -94,8 +94,8 @@ class ShopGoodsController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_goods/find_class_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_goods/find_class_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_goods/find_class_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_goods/find_class_list
      *   api:  /wxapp/shop_goods/find_class_list
      *   remark_name: 分类列表
      *
@@ -186,8 +186,8 @@ class ShopGoodsController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_goods/find_shop_goods_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_goods/find_shop_goods_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_goods/find_shop_goods_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_goods/find_shop_goods_list
      *   api:  /wxapp/shop_goods/find_shop_goods_list
      *   remark_name: 商品管理 列表
      *
@@ -254,8 +254,8 @@ class ShopGoodsController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_goods/find_shop_goods
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_goods/find_shop_goods
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_goods/find_shop_goods
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_goods/find_shop_goods
      *   api:  /wxapp/shop_goods/find_shop_goods
      *   remark_name: 商品管理 详情
      *

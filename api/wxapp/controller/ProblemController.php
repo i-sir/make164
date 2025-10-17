@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-09-01 15:16:24",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\ProblemController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/problem/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/problem/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/problem/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/problem/index",
  * )
  */
 
@@ -43,7 +43,7 @@ class ProblemController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/problem/index
-     * https://ljh.wxselling.net/api/wxapp/problem/index
+     * https://dzam164.wxselling.net/api/wxapp/problem/index
      */
     public function index()
     {
@@ -94,8 +94,8 @@ class ProblemController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/problem/find_problem_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/problem/find_problem_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/problem/find_problem_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/problem/find_problem_list
      *   api:  /wxapp/problem/find_problem_list
      *   remark_name: 常见问题 列表
      *
@@ -148,8 +148,8 @@ class ProblemController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/problem/find_problem
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/problem/find_problem
+     *   test_environment: http://make164.ikun:9090/api/wxapp/problem/find_problem
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/problem/find_problem
      *   api:  /wxapp/problem/find_problem
      *   remark_name: 常见问题 详情
      *

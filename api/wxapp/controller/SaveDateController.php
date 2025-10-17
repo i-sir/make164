@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-08-30 16:18:12",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\SaveDateController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/save_date/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/save_date/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/save_date/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/save_date/index",
  * )
  */
 
@@ -74,8 +74,8 @@ class SaveDateController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/save_date/find_date_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/save_date/find_date_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/save_date/find_date_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/save_date/find_date_list
      *   api:  /wxapp/save_date/find_date_list
      *   remark_name: 获取时间列表
      *

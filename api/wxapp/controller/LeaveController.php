@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-06-06 11:38:50",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\LeaveController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/leave/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/leave/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/leave/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/leave/index",
  * )
  */
 
@@ -43,7 +43,7 @@ class LeaveController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/leave/index
-     * https://ljh.wxselling.net/api/wxapp/leave/index
+     * https://dzam164.wxselling.net/api/wxapp/leave/index
      */
     public function index()
     {
@@ -94,8 +94,8 @@ class LeaveController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/leave/find_leave_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/leave/find_leave_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/leave/find_leave_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/leave/find_leave_list
      *   api:  /wxapp/leave/find_leave_list
      *   remark_name: 投诉建议 列表
      *
@@ -152,8 +152,8 @@ class LeaveController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/leave/find_leave
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/leave/find_leave
+     *   test_environment: http://make164.ikun:9090/api/wxapp/leave/find_leave
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/leave/find_leave
      *   api:  /wxapp/leave/find_leave
      *   remark_name: 投诉建议 详情
      *
@@ -269,8 +269,8 @@ class LeaveController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/leave/add_leave
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/leave/add_leave
+     *   test_environment: http://make164.ikun:9090/api/wxapp/leave/add_leave
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/leave/add_leave
      *   api:  /wxapp/leave/add_leave
      *   remark_name: 投诉建议  添加
      *

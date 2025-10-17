@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-09-01 10:51:21",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\LikeController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/like/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/like/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/like/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/like/index",
  * )
  */
 
@@ -43,7 +43,7 @@ class LikeController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/like/index
-     * https://ljh.wxselling.net/api/wxapp/like/index
+     * https://dzam164.wxselling.net/api/wxapp/like/index
      */
     public function index()
     {
@@ -94,8 +94,8 @@ class LikeController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/like/find_like_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/like/find_like_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/like/find_like_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/like/find_like_list
      *   api:  /wxapp/like/find_like_list
      *   remark_name: 收藏 列表
      *
@@ -163,8 +163,8 @@ class LikeController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/like/edit_like
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/like/edit_like
+     *   test_environment: http://make164.ikun:9090/api/wxapp/like/edit_like
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/like/edit_like
      *   api:  /wxapp/like/edit_like
      *   remark_name: 收藏 删除&添加
      *

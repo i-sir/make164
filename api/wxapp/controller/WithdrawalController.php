@@ -52,8 +52,8 @@ class WithdrawalController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/withdrawal/find_withdrawal_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/withdrawal/find_withdrawal_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/withdrawal/find_withdrawal_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/withdrawal/find_withdrawal_list
      *   api: /wxapp/withdrawal/find_withdrawal_list
      *   remark_name: 提现记录查询
      *
@@ -160,8 +160,8 @@ class WithdrawalController extends AuthController
      *     @OA\Response(response="default", description="An example resource")
      * )
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/withdrawal/add_withdrawal
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/withdrawal/add_withdrawal
+     *   test_environment: http://make164.ikun:9090/api/wxapp/withdrawal/add_withdrawal
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/withdrawal/add_withdrawal
      *   api: /wxapp/withdrawal/add_withdrawal
      *   remark_name: 提交提现申请
      *

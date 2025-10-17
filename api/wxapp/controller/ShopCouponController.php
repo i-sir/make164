@@ -14,8 +14,8 @@ namespace api\wxapp\controller;
  *     "create_time"             =>"2024-07-18 19:03:15",
  *     "version"                 =>"1.0",
  *     "use"                     => new \api\wxapp\controller\ShopCouponController();
- *     "test_environment"        =>"http://makeTemplate.ikun/api/wxapp/shop_coupon/index",
- *     "official_environment"    =>"https://ljh.wxselling.net/api/wxapp/shop_coupon/index",
+ *     "test_environment"        =>"http://make164.ikun:9090/api/wxapp/shop_coupon/index",
+ *     "official_environment"    =>"https://dzam164.wxselling.net/api/wxapp/shop_coupon/index",
  * )
  */
 
@@ -42,7 +42,7 @@ class ShopCouponController extends AuthController
     /**
      * 默认接口
      * /api/wxapp/shop_coupon/index
-     * https://ljh.wxselling.net/api/wxapp/shop_coupon/index
+     * https://dzam164.wxselling.net/api/wxapp/shop_coupon/index
      */
     public function index()
     {
@@ -93,8 +93,8 @@ class ShopCouponController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_coupon/find_shop_coupon_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_coupon/find_shop_coupon_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_coupon/find_shop_coupon_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_coupon/find_shop_coupon_list
      *   api:  /wxapp/shop_coupon/find_shop_coupon_list
      *   remark_name: 优惠券 列表
      *
@@ -162,8 +162,8 @@ class ShopCouponController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_coupon/find_coupon
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_coupon/find_coupon
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_coupon/find_coupon
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_coupon/find_coupon
      *   api:  /wxapp/shop_coupon/find_coupon
      *   remark_name: 优惠券详情
      *
@@ -228,8 +228,8 @@ class ShopCouponController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_coupon/add_coupon
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_coupon/add_coupon
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_coupon/add_coupon
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_coupon/add_coupon
      *   api:  /wxapp/shop_coupon/add_coupon
      *   remark_name: 领取优惠券
      *
@@ -327,8 +327,8 @@ class ShopCouponController extends AuthController
      * )
      *
      *
-     *   test_environment: http://makeTemplate.ikun/api/wxapp/shop_coupon/my_coupon_list
-     *   official_environment: https://ljh.wxselling.net/api/wxapp/shop_coupon/my_coupon_list
+     *   test_environment: http://make164.ikun:9090/api/wxapp/shop_coupon/my_coupon_list
+     *   official_environment: https://dzam164.wxselling.net/api/wxapp/shop_coupon/my_coupon_list
      *   api:  /wxapp/shop_coupon/my_coupon_list
      *   remark_name: 已领取优惠列表
      *
