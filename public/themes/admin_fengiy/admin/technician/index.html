@@ -1,0 +1,347 @@
+<include file="public@header"/></head>
+<body xmlns="http://www.w3.org/1999/html">
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('index',['params'=>$params])}">技师管理</a></li>
+    </ul>
+
+    <form class="well form-inline margin-top-20 layui-form ajax-form w-form-search" method="get" autocomplete="off">
+        关键字：
+        <div class="form-group layui-form">
+            <div class="layui-form-item" style="margin-bottom: 0 !important;">
+                <div class="col-md-12">
+                    <div class="layui-inline">
+                        <input type="text" class="form-control" name="keyword" style="width: 180px;"
+                               value="{:input('request.keyword/s','')}" placeholder="请输关键字搜索">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="layui-btn" style="margin-left: 10px">搜索</button>
+        <a class="layui-btn layui-bg-red" href="{:url('index',['params'=>$params])}">清空</a>
+
+
+        <!--<a class="layui-btn layui-bg-blue ajax-export" href="javascript:;">导出</a>-->
+        <input type="hidden" name="is_export" class="is_export" value="0">
+    </form>
+
+
+    <form class="js-ajax-form" method="post" autocomplete="off">
+
+        <br>
+        <div class="table-actions">
+
+
+        </div>
+
+
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 60px">ID</th>
+                <th style="width: 60px">基础信息</th>
+                <th style="width: 60px">联系电话</th>
+                <th style="width: 60px">性别</th>
+                <th style="width: 60px">评分</th>
+                <th style="width: 60px">余额</th>
+                <th style="width: 60px">详细地址</th>
+<!--                <th style="width: 60px">身份证照片</th>-->
+<!--                <th style="width: 60px">资质照片</th>-->
+<!--                <th style="width: 60px">签字</th>-->
+<!--                <th style="width: 60px">介绍</th>-->
+                <th style="width: 60px">新人推荐</th>
+                <th style="width: 60px">平台推荐</th>
+                <th style="width: 60px">拉黑</th>
+                <th style="width: 60px">状态</th>
+                <th style="width: 60px">服务单数</th>
+                <th style="width: 60px">收藏数</th>
+                <th style="width: 60px">工作状态</th>
+                <th style="width: 60px">推荐人</th>
+                <th style="width: 60px">创建时间</th>
+
+                <th style="width: 80px">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>
+                        <div>
+                            <!--                            <if condition="!empty($vo['avatar'])">-->
+                            <!--                                <a href="javascript:imagePreviewDialog('{:cmf_get_image_preview_url($vo.avatar)}');">-->
+                            <!--                                    <img src="{:cmf_get_image_preview_url($vo.avatar)}"-->
+                            <!--                                         style="width:30px;height:30px;border-radius:30px;">-->
+                            <!--                                </a>-->
+                            <!--                            </if>-->
+                            <span ondblclick="copyContent('{$vo.openid}')">{$vo.nickname}</span>
+                        </div>
+                    </td>
+                    <td>{$vo.phone}</td>
+                    <td>{$vo.gender}</td>
+                    <td>{$vo.star}</td>
+                    <td>{$vo.balance}</td>
+                    <td>{:mb_substr($vo.address,0,12,"utf-8")}..</td>
+<!--                    <td>-->
+<!--                        <if condition="!empty($vo.identity_images)">-->
+<!--                            <foreach name="$vo.identity_images" item="value">-->
+<!--                                <a href="javascript:imagePreviewDialog('{:cmf_get_image_preview_url($value)}');">-->
+<!--                                    <img src="{:cmf_get_image_preview_url($value)}"-->
+<!--                                         style="width:40px;height:40px; ">-->
+<!--                                </a>-->
+<!--                            </foreach>-->
+<!--                        </if>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <if condition='!empty($vo.qualifications_image)'>-->
+<!--                            <a href="javascript:imagePreviewDialog('{:cmf_get_asset_url($vo.qualifications_image)}');">-->
+<!--                                <img src='{:cmf_get_asset_url($vo.qualifications_image)}'-->
+<!--                                     style='width: 35px;height: 35px'>-->
+<!--                            </a>-->
+<!--                        </if>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <if condition='!empty($vo.sign_image)'>-->
+<!--                            <a href="javascript:imagePreviewDialog('{$vo.sign_image}');">-->
+<!--                                <img src='{$vo.sign_image}'-->
+<!--                                     style='width: 35px;height: 35px'>-->
+<!--                            </a>-->
+<!--                        </if>-->
+<!--                    </td>-->
+<!--                    <td>{$vo.introduce}</td>-->
+                    <td>
+                        <div class="layui-form">
+                            <input type="checkbox" lay-skin="switch" lay-text="是|否" lay-filter="is_new"
+                                   name="is_new"
+                                   value="{$vo.id}"
+                            <if condition="$vo.is_new == 1">checked</if>
+                            >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="layui-form">
+                            <input type="checkbox" lay-skin="switch" lay-text="是|否" lay-filter="is_index"
+                                   name="is_index"
+                                   value="{$vo.id}"
+                            <if condition="$vo.is_index == 1">checked</if>
+                            >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="layui-form">
+                            <input type="checkbox" lay-skin="switch" lay-text="是|否" lay-filter="is_block"
+                                   name="is_block"
+                                   value="{$vo.id}"
+                            <if condition="$vo.is_block == 1">checked</if>
+                            >
+                        </div>
+                    </td>
+                    <td>{$vo.status_name}</td>
+                    <td>{$vo.sell_count}+
+                        <a style="color: red;"
+                           href="javascript:parent.openIframeLayer('{:url('virtually_sell',['id'=>$vo.id])}','',{ area: ['40%', '65%'],move:'.layui-layer-title'});"
+                        >{$vo.virtually_sell_count}</a>
+                    </td>
+                    <td>{$vo.like_count}+
+                        <a style="color: red;"
+                           href="javascript:parent.openIframeLayer('{:url('virtually_like',['id'=>$vo.id])}','',{ area: ['40%', '65%'],move:'.layui-layer-title'});"
+                        >{$vo.virtually_like_count}</a>
+                    </td>
+                    <td>
+                        <div class="layui-form">
+                            <input type="checkbox" lay-skin="switch" lay-text="上线|下线" lay-filter="work_status"
+                                   name="work_status"
+                                   value="{$vo.id}"
+                            <if condition="$vo.work_status == 1">checked</if>
+                            >
+                        </div>
+                    </td>
+                    <td>
+                        <if condition="!empty($vo.p_user_info)">
+                            <div style="text-align: center;">
+                                <p>(ID:{$vo.p_user_info.id})</p>
+                                <a href="javascript:imagePreviewDialog('{:cmf_get_image_preview_url($vo.p_user_info.avatar)}');">
+                                    <img src="{:cmf_get_image_preview_url($vo.p_user_info.avatar)}"
+                                         style="width:30px;height:30px;border-radius:30px;">
+                                </a>
+                                <span ondblclick="copyContent('{$vo.p_user_info.openid}')">{$vo.p_user_info.nickname}</span>
+                            </div>
+
+                        </if>
+                    </td>
+                    <td>{$vo.create_time|date='Y-m-d H:i:s'}</td>
+
+                    <td>
+                        <a class="layui-btn layui-btn-primary layui-border-green layui-btn-xs"
+                           href="javascript:parent.openIframeLayer('{:url('edit2',['id'=>$vo.id])}','',{ area: ['65%', '85%'],move:'.layui-layer-title'});"
+                        >编辑</a>
+
+                        <a class="layui-btn layui-btn-primary layui-border-blue layui-btn-xs"
+                           href="javascript:parent.openIframeLayer('{:url('find',['id'=>$vo.id])}','',{ area: ['65%', '85%'],move:'.layui-layer-title'});"
+                        >查看</a>
+
+                        <a class="layui-btn layui-btn-primary layui-border-blue layui-btn-xs"
+                           href="javascript:parent.openIframeLayer('{:url('commission',['id'=>$vo.id])}','',{ area: ['65%', '85%'],move:'.layui-layer-title'});"
+                        >佣金设置</a>
+
+
+                        <a class="layui-btn layui-btn-primary layui-border-orange layui-btn-xs"
+                           href="javascript:parent.openIframeLayer('{:url('OrderEvaluate/index',['technician_id'=>$vo.id])}','',{ area: ['65%', '85%'],move:'.layui-layer-title'});"
+                        >评价管理</a>
+
+
+                        <a class="layui-btn layui-btn-primary layui-border-purple layui-btn-xs"
+                           href="javascript:parent.openIframeLayer('{:url('operate',array('id'=>$vo.id))}','操作',{ area: ['45%', '65%'],move:'.layui-layer-title'});"
+                        >操作</a>
+
+
+                        <a class="layui-btn layui-btn-primary layui-border-orange layui-btn-xs"
+                           href="javascript:parent.openIframeLayer('{:url('log',array('user_id'=>$vo.id))}','记录',{ area: ['65%', '85%'],move:'.layui-layer-title'});"
+                        >记录</a>
+
+                        <a class="layui-btn layui-btn-primary layui-border-red layui-btn-xs js-ajax-delete"
+                           href="{:url('delete',['id'=>$vo.id,'params'=>$params])}">删除</a>
+
+                        <!--通过无页面+拒绝窗口-->
+                        <if condition="$vo.status == 1">
+                            <a class="layui-btn layui-btn-primary layui-border-green layui-btn-xs js-ajax-dialog-btn"
+                               data-msg="确认同意？"
+                               href="{:url('audit_post',['id'=>$vo.id,'status'=>2])}">同意</a>
+                            <a class="layui-btn layui-btn-primary layui-border-red layui-btn-xs"
+                               href="javascript:parent.openIframeLayer('{:url('refuse',['id'=>$vo.id,'status'=>3])}','',{ area: ['65%', '85%'],move:'.layui-layer-title'});"
+                            >拒绝</a>
+                        </if>
+
+
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+
+    <div class="pagination">{$page|default=''}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
+
+<script>
+    layui.use(['layer', 'form', 'slider'], function () {
+        var layer = layui.layer, form = layui.form;
+
+
+        form.on('switch(is_index)', function (data) {
+            var id = data.value;
+            var is_index = 2;//未选中状态值
+            if (this.checked) {
+                is_index = 1;//选中状态值
+            }
+            $.ajax({
+                url: "{:url('batch_post')}",
+                type: "POST",
+                data: {id: id, is_index: is_index},
+                success: function (res) {
+                    //console.log(res);
+                    if (res.code == 1) {
+                        layer.msg(res.msg, {icon: 1});
+                    } else {
+                        layer.msg(res.msg, {icon: 7});
+                    }
+                }
+            });
+        });
+
+
+        form.on('switch(is_new)', function (data) {
+            var id = data.value;
+            var is_new = 2;//未选中状态值
+            if (this.checked) {
+                is_new = 1;//选中状态值
+            }
+            $.ajax({
+                url: "{:url('batch_post')}",
+                type: "POST",
+                data: {id: id, is_new: is_new},
+                success: function (res) {
+                    //console.log(res);
+                    if (res.code == 1) {
+                        layer.msg(res.msg, {icon: 1});
+                    } else {
+                        layer.msg(res.msg, {icon: 7});
+                    }
+                }
+            });
+        });
+
+
+
+        form.on('switch(is_block)', function (data) {
+            var id = data.value;
+            var is_block = 2;//未选中状态值
+            if (this.checked) {
+                is_block = 1;//选中状态值
+            }
+            $.ajax({
+                url: "{:url('batch_post')}",
+                type: "POST",
+                data: {id: id, is_block: is_block},
+                success: function (res) {
+                    //console.log(res);
+                    if (res.code == 1) {
+                        layer.msg(res.msg, {icon: 1});
+                    } else {
+                        layer.msg(res.msg, {icon: 7});
+                    }
+                }
+            });
+        });
+
+
+
+        form.on('switch(work_status)', function (data) {
+            var id = data.value;
+            var work_status = 3;//未选中状态值
+            if (this.checked) {
+                work_status = 1;//选中状态值
+            }
+            $.ajax({
+                url: "{:url('batch_post')}",
+                type: "POST",
+                data: {id: id, work_status: work_status},
+                success: function (res) {
+                    //console.log(res);
+                    if (res.code == 1) {
+                        layer.msg(res.msg, {icon: 1});
+                    } else {
+                        layer.msg(res.msg, {icon: 7});
+                    }
+                }
+            });
+        });
+
+
+    });
+</script>
+
+
+<!--导出,筛选查询-->
+<script>
+    //导出
+    $(".ajax-export").click(function () {
+        //alert("正在开发中...");
+        $(".is_export").val(1);
+        $(".ajax-form").submit();
+        $(".is_export").val(0);
+        return false;
+    });
+
+    //搜索
+    $(".bt_search").click(function () {
+        $(".w-form-search").removeAttr('action');
+        $(".w-form-search").attr('action', "/index.html");
+        $(".w-form-search").submit();
+    });
+</script>
+

@@ -1,0 +1,158 @@
+<include file="public@header"/>
+<style>
+    textarea {
+        border: 0;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    input {
+        border: 0;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .col-md-6 {
+        margin-top: 7px;
+    }
+</style>
+
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('find',['id'=>$id,'params'=>$params])}">查看</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20 layui-form" autocomplete="off"
+          action="{:url('edit_post',['id'=>$id,'params'=>$params])}">
+
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">头像:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                <if condition="!empty($avatar)">
+                    <foreach name="$avatar" item="value">
+                        <a href="javascript:imagePreviewDialog('{:cmf_get_image_preview_url($value)}');">
+                            <img src="{:cmf_get_image_preview_url($value)}"
+                                 style="width:40px;height:40px; ">
+                        </a>
+                    </foreach>
+                </if>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">昵称:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                {$nickname|default=''}
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">性别:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                {$gender|default=''}
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">联系电话:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                {$phone|default=''}
+            </div>
+        </div>
+
+
+
+<!--        <div class="form-group">-->
+<!--            <label class="col-sm-2 control-label">服务单数:</label>-->
+<!--            <div class="layui-input-block col-md-6 col-sm-10">-->
+<!--                {$sell_count|default='0'}-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        <div class="form-group">-->
+<!--            <label class="col-sm-2 control-label">评分:</label>-->
+<!--            <div class="layui-input-block col-md-6 col-sm-10">-->
+<!--                {$score|default='0'}-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">签名:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                <if condition='!empty($sign_image)'>
+                    <a href="javascript:imagePreviewDialog('{$sign_image}');">
+                        <img src='{$sign_image}' style='width: 35px;height: 35px'>
+                    </a>
+                </if>
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">身份证照片:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                <if condition="!empty($identity_images)">
+                    <foreach name="$identity_images" item="value">
+                        <a href="javascript:imagePreviewDialog('{:cmf_get_image_preview_url($value)}');">
+                            <img src="{:cmf_get_image_preview_url($value)}"
+                                 style="width:40px;height:40px; ">
+                        </a>
+                    </foreach>
+                </if>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">资质照片:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                <if condition='!empty($qualifications_image)'>
+                    <a href="javascript:imagePreviewDialog('{:cmf_get_asset_url($qualifications_image)}');">
+                        <img src='{:cmf_get_asset_url($qualifications_image)}' style='width: 35px;height: 35px'>
+                    </a>
+                    <else/>
+                    暂无上传
+                </if>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">介绍:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                {$introduce|default=''}
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">详细地址:</label>
+            <div class="layui-input-block col-md-6 col-sm-10">
+                {$address|default=''}
+
+            </div>
+        </div>
+        <!-- 主键id -->
+        <input type="text" name="id" value="{$id}" class="form-control post-params item-left" style="display: none">
+
+
+    </form>
+
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
+
+
+

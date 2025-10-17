@@ -1,0 +1,110 @@
+<include file="public@header"/></head>
+<body xmlns="http://www.w3.org/1999/html">
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('alarm_list',['order_num'=>$order_num])}">技师报警</a></li>
+    </ul>
+
+    <form class="well form-inline margin-top-20 layui-form ajax-form w-form-search" method="get" autocomplete="off">
+        关键字：
+        <div class="form-group layui-form">
+            <div class="layui-form-item" style="margin-bottom: 0 !important;">
+                <div class="col-md-12">
+                    <div class="layui-inline">
+                        <input type="text" class="form-control" name="keyword" style="width: 180px;"
+                               value="{:input('request.keyword/s','')}" placeholder="请输关键字搜索">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="layui-btn" style="margin-left: 10px">搜索</button>
+        <a class="layui-btn layui-bg-red" href="{:url('alarm_list',['order_num'=>$order_num])}">清空</a>
+
+
+        <!--        <a class="layui-btn layui-bg-blue ajax-export" href="javascript:;">导出</a>-->
+        <input type="hidden" name="is_export" class="is_export" value="0">
+    </form>
+
+
+    <form class="js-ajax-form" method="post" autocomplete="off">
+
+        <br>
+        <div class="table-actions">
+
+
+        </div>
+
+
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 60px">ID</th>
+                <th style="width: 60px">订单号</th>
+                <th style="width: 60px">技师信息</th>
+                <th style="width: 60px">经度</th>
+                <th style="width: 60px">纬度</th>
+                <th style="width: 60px">详细地址</th>
+                <th style="width: 60px">创建时间</th>
+
+                <th style="width: 80px">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.order_num}</td>
+                    <td>
+                        <p>技师ID:{$vo.technician_id}</p>
+                        <p>技师手机号:{$vo.phone}</p>
+                        <p>技师姓名:{$vo.nickname}</p>
+                    </td>
+                    <td>{$vo.lng}</td>
+                    <td>{$vo.lat}</td>
+                    <td>{$vo.address}</td>
+                    <td>{$vo.create_time|date='Y-m-d H:i:s'}</td>
+
+                    <td>
+                        <a class="layui-btn layui-btn-primary layui-border-blue layui-btn-xs"
+                           href="javascript:parent.openIframeLayer('{:url('map',['id'=>$vo.id])}','',{ area: ['60%', '75%'],move:'.layui-layer-title'});"
+                        >地图信息</a>
+
+                        <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/ShopOrderAddress/delete')">
+                            <a class="layui-btn layui-btn-primary layui-border-red layui-btn-xs js-ajax-delete"
+                               href="{:url('delete',['id'=>$vo.id,'order_num'=>$order_num])}">删除</a>
+                        </if>
+
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+
+    <div class="pagination">{$page|default=''}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
+
+
+<!--导出,筛选查询-->
+<script>
+    //导出
+    $(".ajax-export").click(function () {
+        //alert("正在开发中...");
+        $(".is_export").val(1);
+        $(".ajax-form").submit();
+        $(".is_export").val(0);
+        return false;
+    });
+
+    //搜索
+    $(".bt_search").click(function () {
+        $(".w-form-search").removeAttr('action');
+        $(".w-form-search").attr('action', "/alarm_list.html");
+        $(".w-form-search").submit();
+    });
+</script>
+

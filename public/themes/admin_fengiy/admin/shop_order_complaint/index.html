@@ -1,0 +1,116 @@
+<include file="public@header"/></head>
+<body xmlns="http://www.w3.org/1999/html">
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('index',['params'=>$params])}">订单投诉</a></li>
+
+
+    </ul>
+
+    <form class="well form-inline margin-top-20 layui-form ajax-form w-form-search" method="get" autocomplete="off">
+        关键字：
+        <div class="form-group layui-form">
+            <div class="layui-form-item" style="margin-bottom: 0 !important;">
+                <div class="col-md-12">
+                    <div class="layui-inline">
+                        <input type="text" class="form-control" name="keyword" style="width: 180px;"
+                               value="{:input('request.keyword/s','')}" placeholder="请输关键字搜索">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="layui-btn" style="margin-left: 10px">搜索</button>
+        <a class="layui-btn layui-bg-red" href="{:url('index',['params'=>$params])}">清空</a>
+
+
+        <input type="hidden" name="is_export" class="is_export" value="0">
+    </form>
+
+
+    <form class="js-ajax-form" method="post" autocomplete="off">
+
+        <br>
+        <div class="table-actions">
+
+
+        </div>
+
+
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 60px">ID</th>
+                <th style="width: 60px">用户信息</th>
+                <th style="width: 60px">订单号</th>
+                <th style="width: 60px">内容</th>
+                <th style="width: 60px">图集</th>
+                <th style="width: 60px">创建时间</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>
+                        <if condition='!empty($vo.user_info)'>
+                            <div style="">
+                                <p>(ID:{$vo.user_info.id})</p>
+                                <a href="javascript:imagePreviewDialog('{:cmf_get_asset_url($vo.user_info.avatar)}');">
+                                    <img src='{:cmf_get_asset_url($vo.user_info.avatar)}'
+                                         style='width: 35px;height: 35px;border-radius:30px;'>
+                                </a>
+                                <span ondblclick="copyContent('{$vo.user_info.openid}')">{$vo.user_info.nickname}</span>
+                            </div>
+                            <else/>
+                            已删除
+                        </if>
+                    </td>
+                    <td>{$vo.order_num}</td>
+                    <td>{$vo.content}</td>
+                    <td>
+                        <if condition="!empty($vo.images)">
+                            <foreach name="$vo.images" item="value">
+                                <a href="javascript:imagePreviewDialog('{:cmf_get_image_preview_url($value)}');">
+                                    <img src="{:cmf_get_image_preview_url($value)}"
+                                         style="width:40px;height:40px; ">
+                                </a>
+                            </foreach>
+                        </if>
+                    </td>
+                    <td>{$vo.create_time|date='Y-m-d H:i:s'}</td>
+
+
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+
+    <div class="pagination">{$page|default=''}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
+
+
+<!--导出,筛选查询-->
+<script>
+    //导出
+    $(".ajax-export").click(function () {
+        //alert("正在开发中...");
+        $(".is_export").val(1);
+        $(".ajax-form").submit();
+        $(".is_export").val(0);
+        return false;
+    });
+
+    //搜索
+    $(".bt_search").click(function () {
+        $(".w-form-search").removeAttr('action');
+        $(".w-form-search").attr('action', "/index.html");
+        $(".w-form-search").submit();
+    });
+</script>
+

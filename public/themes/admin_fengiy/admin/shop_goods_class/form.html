@@ -1,0 +1,90 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label">名称:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="name" class="form-control post-params item-left" value="{$name|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">图标:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="hidden" class="form-control post-params item-left" name="image" id="photo-0000002"
+               value="{$image}">
+        <if condition='!empty($image)'>
+            <a href="javascript:imagePreviewDialog('{:cmf_get_asset_url($image)}');">
+                <img src='{:cmf_get_image_preview_url($image)}' id='photo-0000002-preview'
+                     style='width: 85px;height: 80px'>
+            </a>
+            <else/>
+            <img src='/static/images/default.png' id='photo-0000002-preview' style='width: 85px;height: 80px'>
+        </if>
+        <a href="javascript:uploadOneImage('图片上传','#photo-0000002','image');">上传</a>
+        <a onclick="$('#photo-0000002-preview').attr('src','__TMPL__/public/assets/images/default-thumbnail.png');$('#photo-0000002').val('');return false;">取消图片</a>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <label class="col-sm-2 control-label">禁忌说明:
+    <p style="color: red;font-size: 12px;">如分类未设置,读取配置管理</p>
+    </label>
+    <div class="col-md-6 col-sm-10">
+        <script id="taboo_instructions" name="taboo_instructions" type="text/plain">
+          {:cmf_replace_content_file_url(htmlspecialchars_decode($taboo_instructions))}
+        </script>
+        <script type="text/javascript">
+            //编辑器路径定义
+            var editorURL = GV.WEB_ROOT;
+        </script>
+        <script src="__STATIC__/js/ueditor/ueditor.config.js?v=00001" type="text/javascript"></script>
+        <script src="__STATIC__/js/ueditor/ueditor.all.min.js" type="text/javascript"></script>
+        <!--编辑器支持秀米-->
+        <script src="__STATIC__/js/ueditor/xiumi/xiumi-ue-dialog-v5.js" type="text/javascript"></script>
+        <link href="__STATIC__/js/ueditor/xiumi/xiumi-ue-v5.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+            $(function () {
+                editorcontent = new baidu.editor.ui.Editor();
+                editorcontent.render('taboo_instructions');
+                try {
+                    editorcontent.sync();
+                } catch (err) {
+                }
+            });
+        </script>
+    </div>
+</div>
+
+
+
+
+<div class="form-group">
+    <label class="col-sm-2 control-label">下单须知:
+    <p style="color: red;font-size: 12px;">如分类未设置,读取配置管理</p>
+    </label>
+    <div class="col-md-6 col-sm-10">
+        <script id="order_notice" name="order_notice" type="text/plain">
+          {:cmf_replace_content_file_url(htmlspecialchars_decode($order_notice))}
+        </script>
+        <script type="text/javascript">
+            //编辑器路径定义
+            var editorURL = GV.WEB_ROOT;
+        </script>
+        <script src="__STATIC__/js/ueditor/ueditor.config.js?v=00001" type="text/javascript"></script>
+        <script src="__STATIC__/js/ueditor/ueditor.all.min.js" type="text/javascript"></script>
+        <!--编辑器支持秀米-->
+        <script src="__STATIC__/js/ueditor/xiumi/xiumi-ue-dialog-v5.js" type="text/javascript"></script>
+        <link href="__STATIC__/js/ueditor/xiumi/xiumi-ue-v5.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+            $(function () {
+                editorcontent = new baidu.editor.ui.Editor();
+                editorcontent.render('order_notice');
+                try {
+                    editorcontent.sync();
+                } catch (err) {
+                }
+            });
+        </script>
+    </div>
+</div>
+
+
+

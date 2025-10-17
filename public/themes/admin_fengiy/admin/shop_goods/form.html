@@ -1,0 +1,131 @@
+<div class="form-group" style="display: none;">
+    <label class="col-sm-2 control-label">商品类型:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="type" class="form-control post-params item-left" value="{$type|default=''}">
+    </div>
+</div>
+<div class="form-group" style="display: none;">
+    <label class="col-sm-2 control-label">门店id:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="shop_id" class="form-control post-params item-left" value="{$shop_id|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">分类:</label>
+    <div class="layui-input-block col-md-6 col-sm-10" style="">
+        <if condition="!empty($class_id)">
+            <select class="form-control post-params" lay-search name="class_id">
+                <foreach item="vo" key="key" name="class_list">
+                    <option value="{$vo.id}"
+                    <if condition="$class_id eq $vo.id ">selected</if>
+                    >{$vo.name}</option>
+                </foreach>
+            </select>
+            <else/>
+            <select class="form-control post-params" lay-search name="class_id">
+                <foreach item="vo" key="key" name="class_list">
+                    <option value="{$vo.id}">{$vo.name}</option>
+                </foreach>
+            </select>
+        </if>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label">商品名称:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="goods_name" class="form-control post-params item-left"
+               value="{$goods_name|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">价格:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="number" name="price" class="form-control post-params item-left" value="{$price|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">原价:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="number" name="old_price" class="form-control post-params item-left" value="{$old_price|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">分钟:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="number" name="minute" class="form-control post-params item-left" value="{$minute|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">已预约人数:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="number" name="sell_count" class="form-control post-params item-left"
+               value="{$sell_count|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">封面:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="hidden" class="form-control post-params item-left" name="image" id="photo-0000008"
+               value="{$image}">
+        <if condition='!empty($image)'>
+            <a href="javascript:imagePreviewDialog('{:cmf_get_asset_url($image)}');">
+                <img src='{:cmf_get_image_preview_url($image)}' id='photo-0000008-preview'
+                     style='width: 85px;height: 80px'>
+            </a>
+            <else/>
+            <img src='/static/images/default.png' id='photo-0000008-preview' style='width: 85px;height: 80px'>
+        </if>
+        <a href="javascript:uploadOneImage('图片上传','#photo-0000008','image');">上传</a>
+        <a onclick="$('#photo-0000008-preview').attr('src','__TMPL__/public/assets/images/default-thumbnail.png');$('#photo-0000008').val('');return false;">取消图片</a>
+    </div>
+</div>
+<div class="form-group" style="display: none;">
+    <label class="col-sm-2 control-label">图集:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="images" class="form-control post-params item-left" value="{$images|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">介绍:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+                                <textarea rows="4" class="form-control post-params item-left" cols="60"
+                                          name="introduce">{$introduce|default=''}</textarea>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">详情:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <script type="text/plain" id="content" name="content">
+            {:cmf_replace_content_file_url(htmlspecialchars_decode($content))}
+        </script>
+        <script type="text/javascript">
+            //编辑器路径定义
+            var editorURL = GV.WEB_ROOT;
+        </script>
+        <script type="text/javascript" src="/static/js/ueditor/ueditor.config.js?v=00001"></script>
+        <script type="text/javascript" src="/static/js/ueditor/ueditor.all.min.js"></script>
+        <!--编辑器支持秀米-->
+        <script type="text/javascript" src="/static/js/ueditor/xiumi/xiumi-ue-dialog-v5.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/js/ueditor/xiumi/xiumi-ue-v5.css"/>
+        <script type="text/javascript">
+            $(function () {
+                editorcontent = new baidu.editor.ui.Editor();
+                editorcontent.render('content');
+                try {
+                    editorcontent.sync();
+                } catch (err) {
+                }
+            });
+        </script>
+    </div>
+</div>
+
+<div class="form-group" style="display: none;">
+    <label class="col-sm-2 control-label">首页推荐:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="is_index" class="form-control post-params item-left" value="{$is_index|default=''}">
+    </div>
+</div>
+
+

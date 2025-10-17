@@ -1,0 +1,102 @@
+<include file="public@header"/></head>
+<body xmlns="http://www.w3.org/1999/html">
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('index',['user_id'=>$user_id])}">技师佣金管理</a></li>
+
+        <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/TechnicianCommission/add')">
+            <li><a href="{:url('add',['user_id'=>$user_id])}">添加</a></li>
+        </if>
+
+    </ul>
+
+
+    <form class="js-ajax-form" method="post" autocomplete="off">
+
+        <br>
+        <div class="table-actions">
+
+            <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/TechnicianCommission/list_order_post')">
+                <button class="layui-btn layui-btn-primary layui-border-green layui-btn-xs js-ajax-submit" type="submit"
+                        data-action="{:url('list_order_post',['user_id'=>$user_id])}">
+                    排序
+                </button>
+            </if>
+
+
+        </div>
+
+
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/TechnicianCommission/list_order_post')">
+                    <th style="width: 60px">排序</th>
+                </if>
+                <th style="width: 60px">ID</th>
+                <th style="width: 60px">佣金比例</th>
+                <th style="width: 60px">金额</th>
+                <th style="width: 60px">创建时间</th>
+
+                <th style="width: 80px">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/TechnicianCommission/list_order_post')">
+                        <td>
+                            <input type="text" class="input input-order valid post-params" name="list_order[{$vo.id}]"
+                                   value="{$vo.list_order}">
+                        </td>
+                    </if>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.commission}</td>
+                    <td>{$vo.min_amount} -  {$vo.max_amount}</td>
+                    <td>{$vo.create_time|date='Y-m-d H:i:s'}</td>
+
+                    <td>
+                        <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/TechnicianCommission/edit')">
+                            <a class="layui-btn layui-btn-primary layui-border-green layui-btn-xs"
+                               href="{:url('edit',['id'=>$vo.id,'user_id'=>$user_id])}">编辑</a>
+                        </if>
+
+                        <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/TechnicianCommission/delete')">
+                            <a class="layui-btn layui-btn-primary layui-border-red layui-btn-xs js-ajax-delete"
+                               href="{:url('delete',['id'=>$vo.id,'user_id'=>$user_id])}">删除</a>
+                        </if>
+
+
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+
+    <div class="pagination">{$page|default=''}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
+
+
+<!--导出,筛选查询-->
+<script>
+    //导出
+    $(".ajax-export").click(function () {
+        //alert("正在开发中...");
+        $(".is_export").val(1);
+        $(".ajax-form").submit();
+        $(".is_export").val(0);
+        return false;
+    });
+
+    //搜索
+    $(".bt_search").click(function () {
+        $(".w-form-search").removeAttr('action');
+        $(".w-form-search").attr('action', "/index.html");
+        $(".w-form-search").submit();
+    });
+</script>
+

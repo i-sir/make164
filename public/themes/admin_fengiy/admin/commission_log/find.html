@@ -1,0 +1,103 @@
+ <include file="public@header"/>
+<style>
+    textarea {
+        border: 0;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    input {
+        border: 0;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .col-md-6 {
+        margin-top: 7px;
+    }
+</style>
+
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('find',['id'=>$id,'params'=>$params])}">查看</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20 layui-form" autocomplete="off"
+          action="{:url('edit_post',['id'=>$id,'params'=>$params])}">
+
+
+        
+            <div class="form-group">
+                <label class="col-sm-2 control-label">技师id:</label>
+                <div class="layui-input-block col-md-6 col-sm-10">
+                                                {$technician_id|default=''}
+                    
+                </div>
+            </div>
+
+
+        
+            <div class="form-group">
+                <label class="col-sm-2 control-label">日期:</label>
+                <div class="layui-input-block col-md-6 col-sm-10">
+                                                {$date|default=''}
+                </div>
+            </div>
+
+
+        
+            <div class="form-group">
+                <label class="col-sm-2 control-label">天:</label>
+                <div class="layui-input-block col-md-6 col-sm-10">
+                                                {$day|default=''}
+                    
+                </div>
+            </div>
+
+
+        
+            <div class="form-group">
+                <label class="col-sm-2 control-label">佣金比例:</label>
+                <div class="layui-input-block col-md-6 col-sm-10">
+                                                {$commission|default=''}
+                    
+                </div>
+            </div>
+
+
+        
+            <div class="form-group">
+                <label class="col-sm-2 control-label">总订单金额:</label>
+                <div class="layui-input-block col-md-6 col-sm-10">
+                                                {$total_amount|default=''}
+                    
+                </div>
+            </div>
+
+
+        
+            <div class="form-group">
+                <label class="col-sm-2 control-label">总佣金:</label>
+                <div class="layui-input-block col-md-6 col-sm-10">
+                                                {$amount|default=''}
+                    
+                </div>
+            </div>
+
+
+        
+
+        <!-- 主键id -->
+        <input type="text" name="id" value="{$id}" class="form-control post-params item-left" style="display: none">
+
+
+    </form>
+
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
+
+
+

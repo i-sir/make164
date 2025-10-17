@@ -1,0 +1,104 @@
+<include file="public@header"/></head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li {$type1}><a href="{:url('log',array('user_id'=>$user_id,'type'=>1))}">余额</a></li>
+<!--        <li {$type2}><a href="{:url('log',array('user_id'=>$user_id,'type'=>2))}">积分</a></li>-->
+    </ul>
+
+    <form class="well form-inline margin-top-20 layui-form ajax-form" method="get" autocomplete="off"
+          action="{:url('log',array('user_id'=>$user_id,'type'=>$type))}">
+
+        <input type="hidden" name="user_id" value="{$user_id}">
+        <input type="hidden" name="type" value="{$type}">
+
+
+        关键字：
+        <div class="form-group layui-form">
+            <div class="layui-form-item" style="margin-bottom: 0 !important;">
+                <div class="col-md-12">
+                    <div class="layui-inline">
+                        <input type="text" class="form-control" name="keyword" style="width: 180px;"
+                               value="{:input('request.keyword/s','')}" placeholder="请输关键字搜索">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        开始时间：
+        <div class="form-group">
+            <div class="layui-form-item">
+                <div class="col-md-6 col-sm-10"
+                     style="display: flex;margin-top: 10px;width: 180px;margin-right: 50px">
+                    <input type="text" class="form-control post-params js-date" name="beginTime"
+                           value="{:input('request.beginTime/s','')}" placeholder="请输入开始时间">
+                </div>
+            </div>
+        </div>
+
+
+        结束时间：
+        <div class="form-group">
+            <div class="layui-form-item">
+                <div class="col-md-6 col-sm-10" style="display: flex;margin-top: 10px;width: 150px;">
+                    <input type="text" class="form-control post-params js-date" name="endTime"
+                           value="{:input('request.endTime/s','')}" placeholder="请输入结束时间">
+                </div>
+            </div>
+        </div>
+
+
+        <button type="submit" class="layui-btn" style="margin-left: 70px">搜索</button>
+<!--        <a type="button" class="layui-btn layui-bg-blue ajax-export" href="javascript:;">导出</a>-->
+<!--        <input type="hidden" name="is_export" class="is_export" value="0">-->
+        <a class="layui-btn layui-bg-red" href="{:url('log',array('user_id'=>$user_id,'type'=>$type))}">清空</a>
+    </form>
+
+
+    <form class="js-ajax-form" method="post">
+
+
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 60px">类型</th>
+                <th style="width: 60px">说明</th>
+                <th style="width: 60px">变动值</th>
+                <th style="width: 60px">变动前</th>
+                <th style="width: 60px">变动后</th>
+                <th style="width: 60px">创建时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.type_name}</td>
+                    <td>{$vo.content}</td>
+                    <td>{$vo.price}</td>
+                    <td>{$vo.before}</td>
+                    <td>{$vo.after}</td>
+                    <td>{$vo.create_time|date='Y-m-d H:i:s'}</td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+
+    <div class="pagination">{$page|default=''}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
+
+
+<script>
+    //导出
+    $(".ajax-export").click(function () {
+        //alert("正在开发中...");
+        $(".is_export").val(1);
+        $(".ajax-form").submit();
+        $(".is_export").val(0);
+        return false;
+    });
+</script>

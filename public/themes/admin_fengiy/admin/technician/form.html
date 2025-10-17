@@ -1,0 +1,205 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label">头像:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="avatar" class="form-control post-params item-left" value="{$avatar|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">昵称:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="nickname" class="form-control post-params item-left" value="{$nickname|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">性别:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="gender" class="form-control post-params item-left" value="{$gender|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">联系电话:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="phone" class="form-control post-params item-left" value="{$phone|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">密码:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="pass" class="form-control post-params item-left" value="{$pass|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">服务单数:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="sell_count" class="form-control post-params item-left"
+               value="{$sell_count|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">评分:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="score" class="form-control post-params item-left" value="{$score|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">签名:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="hidden" class="form-control post-params item-left" name="sign_image" id="photo-0000009"
+               value="{$sign_image}">
+        <if condition='!empty($sign_image)'>
+            <a href="javascript:imagePreviewDialog('{:cmf_get_asset_url($sign_image)}');">
+                <img src='{:cmf_get_image_preview_url($sign_image)}' id='photo-0000009-preview'
+                     style='width: 85px;height: 80px'>
+            </a>
+            <else/>
+            <img src='/static/images/default.png' id='photo-0000009-preview' style='width: 85px;height: 80px'>
+        </if>
+        <a href="javascript:uploadOneImage('图片上传','#photo-0000009','image');">上传</a>
+        <a onclick="$('#photo-0000009-preview').attr('src','__TMPL__/public/assets/images/default-thumbnail.png');$('#photo-0000009').val('');return false;">取消图片</a>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">邀请码:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="invite_code" class="form-control post-params item-left"
+               value="{$invite_code|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">上级:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="pid" class="form-control post-params item-left" value="{$pid|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">身份证照片:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="identity_images" class="form-control post-params item-left"
+               value="{$identity_images|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">资质照片:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="hidden" class="form-control post-params item-left" name="qualifications_image" id="photo-00000013"
+               value="{$qualifications_image}">
+        <if condition='!empty($qualifications_image)'>
+            <a href="javascript:imagePreviewDialog('{:cmf_get_asset_url($qualifications_image)}');">
+                <img src='{:cmf_get_image_preview_url($qualifications_image)}' id='photo-00000013-preview'
+                     style='width: 85px;height: 80px'>
+            </a>
+            <else/>
+            <img src='/static/images/default.png' id='photo-00000013-preview' style='width: 85px;height: 80px'>
+        </if>
+        <a href="javascript:uploadOneImage('图片上传','#photo-00000013','image');">上传</a>
+        <a onclick="$('#photo-00000013-preview').attr('src','__TMPL__/public/assets/images/default-thumbnail.png');$('#photo-00000013').val('');return false;">取消图片</a>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">介绍:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+                                <textarea rows="4" class="form-control post-params item-left" cols="60"
+                                          name="introduce">{$introduce|default=''}</textarea>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">关联项目:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="goods_ids" class="form-control post-params item-left" value="{$goods_ids|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">省id:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="province_id" class="form-control post-params item-left"
+               value="{$province_id|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">市id:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="city_id" class="form-control post-params item-left" value="{$city_id|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">区id:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="county_id" class="form-control post-params item-left" value="{$county_id|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">省name:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="province" class="form-control post-params item-left" value="{$province|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">市name:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="city" class="form-control post-params item-left" value="{$city|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">区name:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="county" class="form-control post-params item-left" value="{$county|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">省code:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="province_code" class="form-control post-params item-left"
+               value="{$province_code|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">市code:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="city_code" class="form-control post-params item-left" value="{$city_code|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">区code:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="county_code" class="form-control post-params item-left"
+               value="{$county_code|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">详细地址:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="address" class="form-control post-params item-left" value="{$address|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">经度:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="lng" class="form-control post-params item-left" value="{$lng|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">纬度:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="lat" class="form-control post-params item-left" value="{$lat|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">经纬度:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="lnglat" class="form-control post-params item-left" value="{$lnglat|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">新人推荐:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="is_new" class="form-control post-params item-left" value="{$is_new|default=''}">
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">平台推荐:</label>
+    <div class="layui-input-block col-md-6 col-sm-10">
+        <input type="text" name="is_index" class="form-control post-params item-left" value="{$is_index|default=''}">
+    </div>
+</div>
+
+
